@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [
+    { urunAdi: "Beyaz Ekmek", fiyat: 2.5, stok: 100, kategori: "Ekmek" },
+    { urunAdi: "Süt", fiyat: 3.75, stok: 50, kategori: "Süt ve Süt Ürünleri" },
+    { urunAdi: "Domates", fiyat: 2.0, stok: 80, kategori: "Meyve ve Sebzeler" },
+    { urunAdi: "Salatalık", fiyat: 1.5, stok: 60, kategori: "Meyve ve Sebzeler" },
+    { urunAdi: "Tavuk Göğsü", fiyat: 15.0, stok: 30, kategori: "Et ve Et Ürünleri" },
+    { urunAdi: "Muz", fiyat: 4.0, stok: 40, kategori: "Meyve ve Sebzeler" },
+    { urunAdi: "Ton Balığı", fiyat: 10.0, stok: 20, kategori: "Konserve ve Hazır Yiyecekler" },
+    { urunAdi: "Soda", fiyat: 1.25, stok: 100, kategori: "İçecekler" },
+    { urunAdi: "Yoğurt", fiyat: 2.25, stok: 40, kategori: "Süt ve Süt Ürünleri" },
+    { urunAdi: "Çikolata", fiyat: 3.0, stok: 60, kategori: "Şekerleme" }
+];
+
+// 1. Qiyməti 50-dən çox olan məhsullar
+let qiymetiYuxsek = arr.filter(item => item.fiyat > 50);
+console.log("Qiyməti 50-dən çox olan məhsullar:", qiymetiYuxsek);
+
+// 2. Kategoriyası “Meyve ve Sebzeler” olan məhsullar
+let meyveSebze = arr.filter(item => item.kategori === "Meyve ve Sebzeler");
+console.log("Meyvə və Tərəvəz kateqoriyası:", meyveSebze);
+
+// 3. Meyvə və Tərəvəz kateqoriyasında olan və stoku 2-dən çox məhsullar
+let meyveStok = arr.filter(item =>
+  item.kategori === "Meyve ve Sebzeler" && item.stok > 2
+);
+console.log("Meyvə və Tərəvəz + stok > 2 olanlar:", meyveStok);
+
+// 4. “Süt” adlı məhsulun olub-olmamasını yoxlamaq
+let sutVar = arr.some(item => item.urunAdi === "Süt");
+console.log("Süt məhsulu var?", sutVar);
+
+// 5. “Ton Balığı” adlı məhsulun indexini tapmaq
+let tonIndex = arr.findIndex(item => item.urunAdi === "Ton Balığı");
+console.log("Ton Balığı məhsulunun index-i:", tonIndex);
+    </script>
+</body>
+</html>
